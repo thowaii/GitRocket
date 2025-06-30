@@ -47,7 +47,6 @@ GitRocket is a desktop application built with Python and Flet that provides a gr
     ```bash
     pip install -r requirements.txt
     ```
-    *Note: A `requirements.txt` file is not provided in the analysis, but based on imports, you'll need: `flet`, `python-dotenv`, `google-generativeai`. Create a `requirements.txt` with these if needed.*
 
 4.  **Setup Environment Variables (Optional for AI):**
     *   Create a file named `.env` in the root directory of the project.
