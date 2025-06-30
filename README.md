@@ -97,4 +97,14 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 📝 License
 
-No license file was found in the analyzed project files. It is recommended to add a LICENSE file to clarify how others can use, modify, and distribute this project. A common choice is the [MIT License](https://choosealicense.com/licenses/mit/).
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+<div align="center">
+  
+**If GitRocket helped streamline your workflow, consider giving us a ⭐!**
+
+*Made with 🤖 by developers, for developers*
+
+</div>
