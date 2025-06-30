@@ -7,6 +7,8 @@
 
 GitRocket is a desktop application built with Python and Flet that provides a graphical interface for common Git operations, focusing on streamlining the staging and commit workflow. It includes features like interactive diff viewing, guided commit message composition, and optional AI-powered commit message suggestions via Google Gemini.
 
+![LLModel Chat Demo](https://raw.githubusercontent.com/LMLK-seal/GitRocket/refs/heads/main/Example.gif)
+
 ✨ Features
 
 *   Graphical User Interface for Git (using Flet).
