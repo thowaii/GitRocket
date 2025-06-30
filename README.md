@@ -22,7 +22,7 @@ A Google Gemini API key (optional, for AI-powered commit messages)
 Steps
 
 Clone the Repository
-git clone https://github.com/your-username/gitrocket.git
+git clone https://github.com/LMLK-Seal/gitrocket.git
 cd gitrocket
 
 
