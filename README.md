@@ -1,110 +1,99 @@
-🚀 GitRocket - A Modern Git GUI Client
-GitRocket is a powerful, user-friendly Git GUI client built with Flet and Python, designed to streamline your Git workflow. With an intuitive interface, AI-powered commit message suggestions, and robust Git operations, GitRocket empowers developers to manage repositories efficiently and effectively. Whether you're staging changes, resolving merge conflicts, or pushing to remotes, GitRocket makes version control a breeze.
+# GitRocket
+
+![Language](https://img.shields.io/badge/language-Python-blue.svg)
+![Framework](https://img.shields.io/badge/framework-Flet-yellowgreen.svg)
+![AI Integration](https://img.shields.io/badge/AI-Gemini-orange.svg)
+![Status](https://img.shields.io/badge/status-In%20Development-red.svg)
+
+GitRocket is a desktop application built with Python and Flet that provides a graphical interface for common Git operations, focusing on streamlining the staging and commit workflow. It includes features like interactive diff viewing, guided commit message composition, and optional AI-powered commit message suggestions via Google Gemini.
 
 ✨ Features
 
-Interactive Diff View 🖥️: Visualize and selectively stage or unstage changes with a detailed, color-coded diff viewer.
-AI-Powered Commit Messages 🤖: Leverage Google's Gemini API to generate conventional commit messages based on your changes.
-Branch Management 🌳: Easily switch, merge, and manage local and remote branches with a clean interface.
-Merge Conflict Resolution 🚨: Detect and resolve merge conflicts with guided steps and clear file listings.
-Stash Management 📦: Create, apply, and delete stashes to manage your working directory seamlessly.
-Repository Insights 📊: View branch status, recent commit history, and change summaries at a glance.
-Cross-Platform 🌐: Built with Flet, GitRocket runs on Windows, macOS, and Linux.
+*   Graphical User Interface for Git (using Flet).
+*   Display repository status (current branch, changes summary, recent history).
+*   Interactive Staging Area: View unstaged/staged files and their diffs.
+*   Hunk-based staging/unstaging directly from the diff view.
+*   Guided Commit Message Composer following Conventional Commits style.
+*   🤖 AI Suggestion for Commit Messages (requires Google Gemini API key).
+*   Perform basic Git operations: Stage, Unstage, Commit, Push, Pull, Checkout, Merge, Stash.
+*   Handle Merge Conflicts graphically.
+*   Manage Git user configuration per repository.
+*   Persist the last opened project path.
 
+📚 Tech Stack
 
-🛠️ Installation
-Prerequisites
+*   **Language:** Python
+*   **GUI Framework:** Flet
+*   **Git Operations:** `subprocess` module executing standard `git` commands.
+*   **AI Integration:** `google-generativeai` library.
+*   **Environment Variables:** `python-dotenv`.
 
-Python 3.8+
-Git installed and available in your system PATH
-A Google Gemini API key (optional, for AI-powered commit messages)
+🚀 Installation
 
-Steps
+1.  **Prerequisites:**
+    *   Python 3.8 or higher
+    *   Git installed and available in your system's PATH.
+    *   (Optional for AI features) A Google Cloud project with access to the Gemini API and a generated API key.
 
-Clone the Repository
-git clone https://github.com/LMLK-Seal/gitrocket.git
-cd gitrocket
+2.  **Clone the repository:**
+    ```bash
+    https://github.com/LMLK-Seal/gitrocket.git
+    cd gitrocket
+    ```
 
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *Note: A `requirements.txt` file is not provided in the analysis, but based on imports, you'll need: `flet`, `python-dotenv`, `google-generativeai`. Create a `requirements.txt` with these if needed.*
 
-Install Dependencies
-pip install -r requirements.txt
+4.  **Setup Environment Variables (Optional for AI):**
+    *   Create a file named `.env` in the root directory of the project.
+    *   Add your Google Gemini API key:
+        ```env
+        GEMINI_API_KEY=YOUR_API_KEY_HERE
+        ```
+    *   Replace `YOUR_API_KEY_HERE` with your actual key.
 
+▶️ Usage
 
-Set Up EnvironmentCreate a .env file in the project root and add your Gemini API key:
-GEMINI_API_KEY=your-api-key-here
+1.  **Run the application:**
+    ```bash
+    python main.py
+    ```
 
+2.  **Select a Repository:**
+    *   The application will open to a welcome screen.
+    *   Click the "Load Project Folder" button.
+    *   Select the root directory of a local Git repository.
 
-Run the Application
-python main.py
+3.  **Dashboard:**
+    *   After loading a repository, you'll see the dashboard with the current branch status, change summary, stash tray, and recent history.
+    *   Click "Review Changes" to go to the staging area.
 
+4.  **Staging Area:**
+    *   View unstaged and staged files.
+    *   Click on a file name to view its diff below.
+    *   In the diff view, you can select specific hunks (sections of changes) using checkboxes and click "Stage Selected" or "Unstage Selected" to move them between areas.
+    *   Use the "Stage All" and "Unstage All" buttons for bulk actions.
+    *   Once files are staged, click "Compose Commit Message".
 
+5.  **Commit Composer:**
+    *   Fill in the commit message details (Type, Scope, Subject, Body, Footer) following the Conventional Commits structure.
+    *   (If AI is configured) Click "AI Suggest" to get a suggested commit message based on staged changes.
+    *   Click "Commit & Launch" to commit the staged changes and then push to the configured remote.
 
+6.  **Branch Management:**
+    *   Access branch management from the dashboard (LAN icon). View local and remote branches, checkout local branches, or merge branches into the current one.
 
-📖 Usage
-
-Launch GitRocket 🚀Run python main.py to start the application. The welcome screen will prompt you to select a Git repository folder.
-
-Select a Repository 📂Choose a valid Git repository to load. GitRocket will validate the repository and check for Git configuration (user.name and user.email).
-
-Dashboard Overview 🖼️The dashboard displays:
-
-Repository name and path
-Branch status (ahead/behind upstream)
-Change summary (modified, new, deleted, staged files)
-Recent commit history
-Stash tray for managing stashed changes
-
-
-Staging Changes 📋Navigate to the "Launchpad" to review unstaged and staged changes. Use the interactive diff view to stage/unstage specific hunks or entire files.
-
-Committing ✍️Use the Commit Composer to craft conventional commit messages. Optionally, generate AI-suggested messages based on staged changes.
-
-Pushing to Remote 🚀After committing, GitRocket automatically pushes changes to the remote repository, displaying a success or error message.
-
-Branch Management 🌿View and manage local/remote branches, checkout branches, or merge branches into the current one.
-
-Merge Conflict Handling ⚠️If a merge conflict occurs, GitRocket lists conflicting files and guides you through resolution and staging.
-
-
-
-🗂️ Project Structure
-gitrocket/
-├── git_ops.py          # Core Git operations and repository management
-├── ui_components.py    # UI components for diff view and commit composer
-├── main.py             # Main application entry point
-├── requirements.txt    # Project dependencies
-├── .env                # Environment variables (e.g., GEMINI_API_KEY)
-└── gitrocket.log       # Application logs
-
-
-🔧 Configuration
-
-Git Configuration: Ensure user.name and user.email are set in your Git repository. GitRocket prompts for configuration if these are missing.
-AI Features: A valid GEMINI_API_KEY in the .env file is required for AI-powered commit message suggestions.
-
-
-📜 Logging
-GitRocket logs all operations and errors to gitrocket.log for debugging and auditing purposes. Check this file if you encounter issues.
+7.  **Settings:**
+    *   Access settings from the dashboard.
+    *   Configure the `user.name` and `user.email` for the current repository. You can also change the project folder from here.
 
 🤝 Contributing
-Contributions are welcome! To contribute:
 
-Fork the repository.
-Create a feature branch (git checkout -b feature/your-feature).
-Commit your changes (git commit -m "feat: add your feature").
-Push to the branch (git push origin feature/your-feature).
-Open a Pull Request.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please ensure your code follows the project's coding style and includes appropriate tests.
+📝 License
 
-📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-🙏 Acknowledgments
-
-Built with Flet for cross-platform UI.
-Powered by Google Gemini API for AI-driven commit suggestions.
-Inspired by the need for a simple, modern Git GUI.
-
-
-Happy Coding with GitRocket! 🚀
+No license file was found in the analyzed project files. It is recommended to add a LICENSE file to clarify how others can use, modify, and distribute this project. A common choice is the [MIT License](https://choosealicense.com/licenses/mit/).
